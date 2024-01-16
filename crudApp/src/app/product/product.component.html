@@ -1,6 +1,8 @@
 
 <button class="addBtn" mat-raised-button color="accent" (click)="openForm()">ADD PRODUCTS</button>
+<button class="addBtn" mat-raised-button color="accent" (click)="loadProducts()">REFRESH</button>
 <br>
+
 
 <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
 
@@ -25,12 +27,18 @@
       <td mat-cell *matCellDef="let product"> {{product.price}} </td>
     </ng-container>
 
+        <!-- Quantity Column -->
+        <ng-container matColumnDef="quantity">
+            <th mat-header-cell *matHeaderCellDef> Quantity </th>
+            <td mat-cell *matCellDef="let product"> {{product.quantity}} </td>
+          </ng-container>
+
     <!-- Action Column -->
     <ng-container matColumnDef="action">
         <th mat-header-cell *matHeaderCellDef> Action </th>
         <td mat-cell *matCellDef="let product"> 
-            <!-- <button mat-raised-button color="accent"(click)="updateProductByID(product)">Edit</button>  -->
-            <button mat-raised-button color="accent">Edit</button> 
+             <button mat-raised-button color="accent"(click)="updateProductByID(product)">Edit</button>
+            <!-- <button mat-raised-button color="accent">Edit</button>  -->
             <button mat-raised-button color="warn" (click)="deleteProductByID(product.id)">Delete</button>
         </td>
       </ng-container>

@@ -3,8 +3,6 @@
     flex-direction: column;
     align-items: flex-start;
   }
-
-
   .example-form {
     padding-top: 20px;
     padding-left: 20px;
@@ -12,7 +10,13 @@
     max-width: 500px;
     width: 90%;
   }
-  
   .example-full-width {
     width: 100%;
+  }
+  .btnDiv{
+       align-items: end;
+       margin-left: 270px;
+  }
+  button{
+    margin-left: 10px;
   }
